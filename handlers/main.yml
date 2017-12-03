@@ -1,0 +1,4 @@
+---
+- name: setup zfs systemd 
+  listen: zfs_installed 
+  shell: "systemctl preset zfs-import-cache zfs-import-scan zfs-mount zfs-share zfs-zed zfs.target" 

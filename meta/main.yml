@@ -1,0 +1,22 @@
+---
+dependencies:
+
+galaxy_info:
+  author: gabethecabbage
+  description: Installs and enables the ZFS kernel module for RHEL/Ubuntu 
+  license: BSD
+  min_ansible_version: 2.3
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+        - yakkety
+        - zesty
+        - artful
+    - name: EL
+      versions:
+        - 6
+        - 7
+  galaxy_tags:
+    - filesystem
+    - zfs

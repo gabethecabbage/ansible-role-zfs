@@ -1,0 +1,24 @@
+---
+- name: ZFSOnLinux repo package installed
+  yum:
+    name: http://download.zfsonlinux.org/epel/zfs-release.el{{ ansible_distribution_major_version }}.noarch.rpm
+    state: present
+
+- name: ZFSOnLinux GPG key imported
+  rpm_key:
+    key: /etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
+    state: present
+  notify: zfs_installed
+
+- template:
+    src: zfs.j2
+    dest: /etc/yum.repos.d/sssd.conf
+    owner: root
+    group: root
+    mode: 0600
+
+- name: ZFS kmod installed
+  yum:
+    name: zfs
+    state: latest
+...

@@ -1,0 +1,14 @@
+---
+- import_tasks: rhel.yml
+  when: ansible_os_family == "RedHat" 
+
+- import_tasks: ubuntu_16.yml
+  when: 
+  - ansible_distribution == 'Ubuntu'
+  - ansible_distribution_version == "16.04" or ansible_distribution_version == "16.10"
+
+- import_tasks: ubuntu_17+.yml
+  when: 
+  - ansible_distribution == 'Ubuntu'
+  - "{{ ansible_distribution_version | version_compare('17.04', '>=') }}"
+...

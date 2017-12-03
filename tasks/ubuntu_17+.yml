@@ -1,0 +1,6 @@
+---
+- name: ZFS kmod installed
+  apt:
+    name: zfsutils
+    state: present
+...
