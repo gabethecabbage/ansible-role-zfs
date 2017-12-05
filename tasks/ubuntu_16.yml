@@ -1,5 +1,5 @@
 ---
-- name: ZFS kmod installed
+- name: ZFS kmod installed (Ubuntu 16.04/16.10)
   apt:
     name: zfs
     state: present

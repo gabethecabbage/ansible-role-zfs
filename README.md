@@ -10,9 +10,9 @@ None
 
 | Variable Name             | Defaults | Description                                                        |
 |---------------------------|----------|--------------------------------------------------------------------|
-| zfs-source-el-enabled     | 0        | state of the zfs-source repository on Enterprise Linux             |
-| zfs-dkms-el-enabled       | 0        | state of the auto-building zfs-dkms repository on Enterprise Linux |
-| zfs-kmod-el-enabled       | 1        | state of the pre-built zfs-kmod repository on Enterprise Linux     |
+| zfs_source_el_enabled     | 0        | state of the zfs-source repository on Enterprise Linux             |
+| zfs_dkms_el_enabled       | 0        | state of the auto-building zfs-dkms repository on Enterprise Linux |
+| zfs_kmod_el_enabled       | 1        | state of the pre-built zfs-kmod repository on Enterprise Linux     |
 
 ## Dependencies
 

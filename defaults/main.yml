@@ -1,5 +1,5 @@
----
-zfs-source-el-enabled: 0
-zfs-dkms-el-enabled: 0
-zfs-kmod-el-enabled: 1
+___
+zfs_source_el_enabled: 0
+zfs_dkms_el_enabled: 0
+zfs_kmod_el_enabled: 1
 ...

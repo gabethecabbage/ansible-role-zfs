@@ -1,5 +1,5 @@
 ---
-- name: ZFS kmod installed
+- name: ZFS kmod installed (17.04+)
   apt:
     name: zfsutils
     state: present

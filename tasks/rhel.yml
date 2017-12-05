@@ -1,24 +1,33 @@
 ---
-- name: ZFSOnLinux repo package installed
+- name: ZFSOnLinux repo package installed (RedHat)
   yum:
     name: http://download.zfsonlinux.org/epel/zfs-release.el{{ ansible_distribution_major_version }}.noarch.rpm
     state: present
 
-- name: ZFSOnLinux GPG key imported
+- name: ZFSOnLinux GPG key imported (RedHat)
   rpm_key:
     key: /etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
     state: present
-  notify: zfs_installed
 
-- template:
+- name: ZFSforLinux repo is templated (RedHat)
+  template:
     src: zfs.repo.j2
     dest: /etc/yum.repos.d/sssd.conf
     owner: root
     group: root
     mode: 0600
+  notify: zfs_repo_changed
+    
+- name: kernel-devel installed if using zfs-dkms (RedHat)
+  yum:
+    name: kernel-devel
+    state: latest
+  when: zfs_dkms_el_enabled == 0
+  
 
-- name: ZFS kmod installed
+- name: ZFS installed (RedHat)
   yum:
     name: zfs
     state: latest
+  notify: zfs_installed
 ...
