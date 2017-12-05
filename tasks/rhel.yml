@@ -11,7 +11,7 @@
   notify: zfs_installed
 
 - template:
-    src: zfs.j2
+    src: zfs.repo.j2
     dest: /etc/yum.repos.d/sssd.conf
     owner: root
     group: root
