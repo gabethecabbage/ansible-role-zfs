@@ -1,21 +1,5 @@
 ---
-- name: remove old zfs kernel modules
-  listen: zfs_repo_changed
-  yum: 
-    name: "{{ item }}"
-    state: absent
-  with_items:
-    - zfs
-    - zfs-kmod
-    - spl
-    - spl-kmod
-    - libzfs2
-    - libnvpair1
-    - libuutil1
-    - libzpool2
-    - zfs-release
-  ignore_errors: yes
-
 - name: setup zfs systemd 
   listen: zfs_installed 
   shell: "systemctl preset zfs-import-cache zfs-import-scan zfs-mount zfs-share zfs-zed zfs.target" 
+...

@@ -16,15 +16,31 @@
     owner: root
     group: root
     mode: 0600
-  notify: zfs_repo_changed
-    
+  register: zfs_repo_template
+
+- name: remove old zfs kernel modules
+  yum:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - zfs
+    - zfs-kmod
+    - spl
+    - spl-kmod
+    - libzfs2
+    - libnvpair1
+    - libuutil1
+    - libzpool2
+    - zfs-release
+  ignore_errors: yes
+  when: zfs_repo_template.changed
+  
 - name: kernel-devel installed if using zfs-dkms (RedHat)
   yum:
     name: kernel-devel
     state: latest
-  when: zfs_dkms_el_enabled == 0
+  when: zfs_dkms_el_enabled == 1
   
-
 - name: ZFS installed (RedHat)
   yum:
     name: zfs
