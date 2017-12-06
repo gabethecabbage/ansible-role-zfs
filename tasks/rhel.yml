@@ -15,7 +15,7 @@
     dest: /etc/yum.repos.d/zfs.repo
     owner: root
     group: root
-    mode: 0600
+    mode: 0644
   register: zfs_repo_template
 
 - name: remove old zfs kernel modules
