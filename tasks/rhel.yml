@@ -12,7 +12,7 @@
 - name: ZFSforLinux repo is templated (RedHat)
   template:
     src: zfs.repo.j2
-    dest: /etc/yum.repos.d/sssd.conf
+    dest: /etc/yum.repos.d/zfs.repo
     owner: root
     group: root
     mode: 0600
