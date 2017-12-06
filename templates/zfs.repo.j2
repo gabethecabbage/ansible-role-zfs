@@ -1,20 +1,20 @@
 [zfs-source]
 name = ZFS on Linux for EL{{ ansible_distribution_major_version }} - Source
-baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_version }}/SRPMS/
+baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_major_version }}/SRPMS/
 enabled = {{ zfs_source_el_enabled }}
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
 
 [zfs]
 name = ZFS on Linux for EL{{ ansible_distribution_major_version }} - dkms
-baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_version }}/$basearch/
+baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_major_version }}/$basearch/
 enabled = {{ zfs_dkms_el_enabled }}
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
 
 [zfs-kmod]
 name = ZFS on Linux for EL{{ ansible_distribution_major_version }} - kmod
-baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_version }}/kmod/$basearch/
+baseurl = http://download.zfsonlinux.org/epel/{{ ansible_distribution_major_version }}/kmod/$basearch/
 enabled = {{ zfs_kmod_el_enabled }}
 gpgcheck = 1
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-zfsonlinux
