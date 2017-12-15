@@ -31,7 +31,6 @@
     - libnvpair1
     - libuutil1
     - libzpool2
-    - zfs-release
   ignore_errors: yes
   when: zfs_repo_template.changed
   
